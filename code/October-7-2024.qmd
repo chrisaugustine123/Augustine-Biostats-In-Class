@@ -1,0 +1,26 @@
+---
+title: "October-7-2024"
+author: "Christopher Augustine"
+format: html
+editor: visual
+---
+
+```{r}
+rm(list=ls())
+library(tidyverse)
+library(here)
+```
+
+```{r}
+tomatoes<- read.csv(here("data","tomato_data.csv"))
+head(tomatoes)
+```
+
+```{r}
+head(tomatoes)
+tomatoes$Treatment<- as.factor(tomatoes$Treatment)
+```
+```{r}
+levels(tomatoes$Treatment)
+```
+
