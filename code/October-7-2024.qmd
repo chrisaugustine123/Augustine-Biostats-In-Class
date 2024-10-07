@@ -4,23 +4,57 @@ author: "Christopher Augustine"
 format: html
 editor: visual
 ---
-
+getting things set up
 ```{r}
 rm(list=ls())
 library(tidyverse)
 library(here)
 ```
-
+reading the csv in 
 ```{r}
 tomatoes<- read.csv(here("data","tomato_data.csv"))
 head(tomatoes)
 ```
-
+looking at the csv
 ```{r}
 head(tomatoes)
 tomatoes$Treatment<- as.factor(tomatoes$Treatment)
 ```
 ```{r}
 levels(tomatoes$Treatment)
+```
+
+fixing the spelling problem 
+```{r}
+
+fix<- which(tomatoes$Treatment == "control")
+tomatoes$Treatment[fix] <- "Control"
+fix1 <- which(tomatoes$Treatment == "fertilizer")
+tomatoes$Treatment[fix1] <- "Fertilizer"
+tomatoes$Treatment <- factor(tomatoes$Treatment)
+```
+
+```{r}
+levels(tomatoes$Treatment)
+```
+```{r}
+test<- c(2,4,6,8,10,12,14,16,18,20)
+summary(test)
+```
+```{r}
+grades <- c(90,94,96,90,84,86)
+summary(grades) 
+quantile(grades, probs = c(0, 0.25, 0.5, 0.75, 1))
+```
+
+```{r}
+library(dplyr)
+
+```
+
+```{r}
+select(tomatoes,Treatment)
+slice(tomatoes, 3:8)
+
 ```
 
