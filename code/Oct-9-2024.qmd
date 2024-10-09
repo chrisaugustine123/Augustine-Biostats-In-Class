@@ -5,7 +5,7 @@ format: html
 editor: visual
 ---
 
-reading in tomato data csv 
+setting things up 
 ```{r}
 rm(list=ls())
 library(tidyverse)
