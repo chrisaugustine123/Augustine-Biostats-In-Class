@@ -44,7 +44,7 @@ ggplot(carnivores, aes(x = adult_wt_g, y = max_longevity_years)) +
   theme_minimal()
 ```
 
-Use code (rather than scrolling the data) to determine which species it is that has the highest maximum longevity? 
+Use code (rather than scrolling the data) to determine which species it is that has the highest maximum longevity?
 
 ```{r}
 longest_lived_species <- animals %>%
@@ -63,7 +63,7 @@ species_wt_range <- animals %>%
 Now make a boxplot of max longevity as a function of family. Set the y-axis label to "maximum longevity, years". Make the points red and somewhat transparent.
 
 ```{r}
-ggplot(animals, aes(x = family, y = maximum longevity, years)) +
+ggplot(animals, aes +
   geom_boxplot(color = "red", alpha = 0.5, width = 0.2) +  
   labs(title = "Boxplot of Maximum Longevity by Family",
        x = "Family",
