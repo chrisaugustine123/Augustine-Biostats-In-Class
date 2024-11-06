@@ -30,7 +30,7 @@ fat$gender<- as.factor(fat$gender)
 ```{r}
 ggplot(fat, aes(x= gender, y = body_fat_percent))+
   geom_boxplot( fill = "black", color= "lightgray")+
-  geom_point(aes(x = gender , y = body_fat_percent), color = "blue", alpha = 0.5, position = position_jitter(width = 0.2)) +
+  geom_point(aes(x = gender , y = body_fat_percent), color = "orange", alpha = 0.5, position = position_jitter(width = 0.2)) +
   labs(
     title = "gender vs. bodyfat",
     x = "gender",

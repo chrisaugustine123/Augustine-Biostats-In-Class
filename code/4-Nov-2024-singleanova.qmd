@@ -1,0 +1,46 @@
+---
+title: "11-4-2024"
+author: "Christopher Augustine"
+format: html
+editor: visual
+---
+
+```{r}
+rm(list=ls())
+library(tidyverse)
+library(here)
+library(ggfortify)
+library(multcomp)
+```
+
+
+```{r}
+tree <- read.csv(here("data", "Forest_Tree_DBH_F21.csv"))
+head(tree)
+```
+
+
+```{r}
+model_grow<- lm( DBH_cm ~ , data = tree)
+```
+
+
+```{r}
+autoplot(model_grow, smooth.color= NA)
+```
+```{r}
+
+model_anova <- aov(DBH_cm ~ Forest, data = tree)
+
+
+summary(model_anova)
+
+```
+```{r}
+TukeyHSD(model_anova)
+```
+
+```{r}
+
+```
+
