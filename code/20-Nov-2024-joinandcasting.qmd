@@ -1,0 +1,42 @@
+---
+title: "Nov-20-2024"
+author: "Christopher Augustine"
+format: html
+editor: visual
+---
+
+```{r}
+rm(list=ls())
+library(tidyverse)
+library(here)
+library(ggfortify)
+
+```
+
+```{r}
+cams <- read.csv(here("data", "site_locations.csv"))
+```
+
+```{r}
+species<- read.csv(here("data", "species_per_site.csv"))
+```
+
+
+```{r}
+specis_wide<- species %>% pivot_wider(
+  names_from= Date, values_from= Num_species)
+```
+
+```{r}
+species_long <- specis_wide %>%
+  pivot_longer(cols = c(`1-Jul-24`:`15-Jul-24`), names_to = "Date", values_to = "Num_species")
+```
+
+```{r}
+cam_species<- full_join(species, cams, by = join_by(Site)) 
+```
+
+```{r}
+species_cam <- full_join(cams, species, by = join_by(Site))
+```
+
